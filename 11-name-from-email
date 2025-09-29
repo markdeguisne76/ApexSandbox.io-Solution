@@ -18,5 +18,4 @@ public String nameFromEmail(String email) {
         }
         str = str.toLowerCase();
         return str.substring(0,1).toUpperCase() + str.substring(1);
-    }
 }
