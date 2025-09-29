@@ -1,5 +1,4 @@
 public String nameFromEmail(String email) {
-    public static String nameFromEmail(String email) {
         // Extract firstname and lastname from the email
         String extractedFirstName = email.substringBefore('.');
         String extractedLastName  = email.substringBetween('.', '@');
