@@ -1,0 +1,3 @@
+public String nameFromEmail(String email) {
+    String extractedFirstName = substringBefore
+}
