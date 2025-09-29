@@ -1,3 +1,23 @@
 public String nameFromEmail(String email) {
-    String extractedFirstName = substringBefore
+    public static String nameFromEmail(String email) {
+        // Extract firstname and lastname from the email
+        String extractedFirstName = email.substringBefore('.');
+        String extractedLastName  = email.substringBetween('.', '@');
+
+        // Capitalize both parts
+        String firstName = capitalize(extractedFirstName);
+        String lastName  = capitalize(extractedLastName);
+
+        return lastName != null && firstName != null
+            ? firstName + ' ' + lastName
+            : '';
+    }
+
+    private static String capitalize(String str) {
+        if (String.isBlank(str)) {
+            return '';
+        }
+        str = str.toLowerCase();
+        return str.substring(0,1).toUpperCase() + str.substring(1);
+    }
 }
