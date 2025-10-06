@@ -1,0 +1,22 @@
+public String changeTimeFormat(String strTime) {
+    // Extract hour and minute
+    Integer hour = Integer.valueOf(strTime.substring(0, 2));
+    String minute = strTime.substring(3, 5);
+
+    String period;
+    if (hour == 0) {
+        period = 'AM';
+        hour = 12; // Midnight
+    } else if (hour == 12) {
+        period = 'PM'; // Noon
+    } else if (hour > 12) {
+        period = 'PM';
+        hour -= 12;
+    } else {
+        period = 'AM';
+    }
+
+    // Format back with leading zero
+    String formattedHour = (hour < 10 ? '0' + String.valueOf(hour) : String.valueOf(hour));
+    return formattedHour + ':' + minute + ' ' + period;
+}
